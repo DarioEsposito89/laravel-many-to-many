@@ -34,9 +34,22 @@
                         </select>
                     </div>
                     
-                    {{-- LINGUAGGIO --}}
+                    {{-- LINGUAGGIO PROGRAMMAZIONE --}}
 
-                    
+                    <div class="mb-3">
+                        <label class="form-label mb-3">Technologies</label>
+
+                        <div class="">
+                            @foreach ($technologies as $specificTechnology)
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="{{$specificTechnology->id}}" {{$project->technologies?->contains($specificTechnology->id) ? "checked" : ""}} id="flexCheckDefault" name="technologies[]">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    {{$specificTechnology->name}}
+                                </label>                            
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
 
                     {{-- LINK PROGETTO --}}
 

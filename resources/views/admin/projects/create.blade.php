@@ -34,7 +34,20 @@
                     
                     {{-- LINGUAGGIO --}}
 
-                    
+                    <div class="mb-3">
+                        <label class="form-label mb-3">Technologies</label>
+
+                        <div class="">
+                            @foreach ($technologies as $specificTech)
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="{{$specificTech->id}}" id="flexCheckDefault" name="technologies[]">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    {{$specificTech->name}}
+                                </label>                            
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
 
                     {{-- LINK PROGETTO --}}
 
