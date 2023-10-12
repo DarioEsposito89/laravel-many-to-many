@@ -13,8 +13,13 @@
                     {{-- Tipologia progetto --}}
                     <p>Type: {{$project->type->type ?? ""}}</p>
 
-                    {{-- Linguaggio --}}
-                    
+                    {{-- Linguaggio Programmazione --}}
+                    <div class="badges-container">
+                        @foreach($project->technologies as $specificProject)
+                            <p class="badge text-dark" style="background-color: rgb({{$specificProject->color}})"> {{$specificProject->name}}</p>            
+                        @endforeach
+                    </div>
+
 
                     {{-- Descrizione --}}
                     <p class="mt-2">{{$project->description}}</p>
