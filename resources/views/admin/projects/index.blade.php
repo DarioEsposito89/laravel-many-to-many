@@ -9,10 +9,9 @@
                         <tr>
                             <th>Title</th>
                             <th>Type</th>
-                            <th>Language</th>
                             <th>Image</th>
                             <th>Link</th>
-                            <th>Action</th>
+                            <th>Watch in datails</th>
                         </tr>                    
                     </thead>
                     <tbody>
@@ -23,9 +22,6 @@
 
                             {{-- TIPO PROGETTO --}}
                             <td>{{$specificProject->type->type ?? ""}}</td>
-
-                            {{-- LINGUAGGIO --}}
-                            
 
                             {{-- IMMAGINE --}}
                             <td><img src={{ asset('/storage/' . $specificProject->thumb) }} class="img-thumbnail" style="width: 100px"></td>
