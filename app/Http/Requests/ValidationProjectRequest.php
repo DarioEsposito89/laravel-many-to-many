@@ -23,7 +23,6 @@ class ValidationProjectRequest extends FormRequest
     {
         return [
             "title"=>"required|string",
-            "language"=>"required|string",
             "link"=>"required|string",
             "description"=>"required|string",
             "thumb"=>"nullable|image|max:5120",

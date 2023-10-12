@@ -34,15 +34,7 @@
                     
                     {{-- LINGUAGGIO --}}
 
-                    <div class="mb-3">
-                        <label for="language" class="form-label">Languages</label>
-                        <input type="text" class="form-control @error("language") is-invalid                            
-                        @enderror" id="language" name="language" value="{{old("language")}}" >
-                        {{-- ALLERT --}}
-                        @error("language")
-                            <div class="invalid-feedback">Enter the programming languages you used for the project</div>
-                        @enderror
-                    </div>
+                    
 
                     {{-- LINK PROGETTO --}}
 

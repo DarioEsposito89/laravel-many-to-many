@@ -25,7 +25,7 @@
                             <td>{{$specificProject->type->type ?? ""}}</td>
 
                             {{-- LINGUAGGIO --}}
-                            <td>{{implode(",", $specificProject->language)}}</td>
+                            
 
                             {{-- IMMAGINE --}}
                             <td><img src={{ asset('/storage/' . $specificProject->thumb) }} class="img-thumbnail" style="width: 100px"></td>

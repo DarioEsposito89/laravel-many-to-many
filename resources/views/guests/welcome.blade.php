@@ -42,7 +42,7 @@
                             <p>Type: {{$project->type->type ?? ""}}</p>
 
                             {{-- Linguaggio --}}
-                            <small>{{implode(",", $project->language )}}</small>
+                            
 
                             {{-- Bottone per SHOW --}}
                             <div class="container text-center mt-5">

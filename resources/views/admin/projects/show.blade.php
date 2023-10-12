@@ -14,7 +14,7 @@
                     <p>Type: {{$project->type->type ?? ""}}</p>
 
                     {{-- Linguaggio --}}
-                    <small class="fw-bold">{{implode(",", $project->language )}}</small>
+                    
 
                     {{-- Descrizione --}}
                     <p class="mt-2">{{$project->description}}</p>
