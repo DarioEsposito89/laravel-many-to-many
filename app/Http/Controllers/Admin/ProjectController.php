@@ -65,8 +65,9 @@ class ProjectController extends Controller
     public function index():View
     {
         $projects= Project::all();
+        $technologies = Technology::all();
 
-        return view("admin.projects.index", compact("projects"));
+        return view("admin.projects.index", compact("projects", "technologies"));
     }
  
 
@@ -96,9 +97,10 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
 
         $types = Type::all();
+        $technologies = Technology::all();
 
 
-        return view("admin.projects.edit", compact("project", "types"));
+        return view("admin.projects.edit", compact("project", "types", "technologies"));
     }
 
     /**
@@ -124,6 +126,8 @@ class ProjectController extends Controller
             
             $data["thumb"] = Storage::put("projects", $data["thumb"]);
         }
+
+        $project->technologies()->sync($data["technologies"]);
 
         $project->update($data);
 
