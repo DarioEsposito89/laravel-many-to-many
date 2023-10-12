@@ -42,10 +42,11 @@ class ProjectController extends Controller
 
         $data["thumb"] = Storage::put("projects", $data["thumb"]);
 
-        //creo l'istanza di Project, fill per assegnare i dati all'istanza
-        //save per salvarli nel database
-
         $project = Project::create($data);
+
+        if($data["technologies"]){
+            $project->technologies()->attach($data["technologies"]);
+        }
 
         return redirect()->route("admin.projects.show", $project->slug);
     }
@@ -142,12 +143,14 @@ class ProjectController extends Controller
             Storage::delete($project->thumb);
         }
 
+        $project->technologies()->detach();
+        
         $project->delete();
 
         return redirect()->route("admin.projects.index");
     }
 
-    // FUNZIONE PER OTTIMIZZARE LE GENERAZIONE DI SLUG
+    // FUNZIONE LA GENERAZIONE DEGLI SLUG
 
     protected function generateSlug($title){
         $counter = 0;
