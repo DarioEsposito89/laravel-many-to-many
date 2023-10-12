@@ -7,6 +7,7 @@ use App\Http\Requests\ValidationProjectRequest;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
@@ -144,7 +145,7 @@ class ProjectController extends Controller
         }
 
         $project->technologies()->detach();
-        
+
         $project->delete();
 
         return redirect()->route("admin.projects.index");
